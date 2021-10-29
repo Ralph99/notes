@@ -1,2 +1,2 @@
 # notes
-API for a note taking app
+API for a simple note taking app
