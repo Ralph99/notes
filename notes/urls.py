@@ -18,6 +18,8 @@ from django.urls import path, include
 
 from rest_framework.schemas import get_schema_view
 
+from django.views.generic import TemplateView
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/v1/', include('note.urls')),
@@ -26,5 +28,10 @@ urlpatterns = [
         title="Note taking app",
         description="API for developers hoping to use this service",
         # name="openapi-schema"
-        ),),
+        ), name="openapi-schema"),
+
+    path('docs/', TemplateView.as_view(
+        template_name='documentation.html',
+        extra_context={'schema_url':'openapi-schema'},
+        ), name='swagger-ui'),
 ]
