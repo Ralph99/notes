@@ -40,6 +40,9 @@ INSTALLED_APPS = [
 
     #local
     'note.apps.NoteConfig',
+
+    #3rd party
+    'rest_framework',
 ]
 
 MIDDLEWARE = [
